@@ -20,7 +20,8 @@ def make_pdf_searchable(pdf_file):
 		# pdf = PyPDF2.PdfFileReader(io.BytesIO(page))
 		pdf = pypdf.PdfReader(io.BytesIO(page))
 		# pdf_writer.addPage(pdf.getPage(0))
-		pdf_writer.add_page(pdf.getPage(0))
+		# pdf_writer.add_page(pdf.getPage(0))
+		pdf_writer.add_page(pdf.pages(0))
 
 	searchable_pdf = io.BytesIO()
 	pdf_writer.write(searchable_pdf)
