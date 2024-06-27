@@ -32,6 +32,7 @@ def make_pdf_searchable(pdf_file):
 
 # Streamlit app
 st.title("Make PDFs Searchable")
+st.text("Upload your pdfs and download the searchable versions after the processing is done. The processing will take a while though, so best to keep this page open to the side, continue with your other work and download the files once they're done.")
 
 uploaded_files = st.file_uploader("", type="pdf", accept_multiple_files=True)
 
