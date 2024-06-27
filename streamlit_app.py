@@ -1,5 +1,6 @@
 import streamlit as st
-import PyPDF2
+# import PyPDF2
+import pypdf
 import pytesseract
 # from pdf2image import convert_from_path
 from pdf2image import convert_from_bytes
@@ -11,11 +12,13 @@ def make_pdf_searchable(pdf_file):
 	# images = convert_from_path(pdf_file)
 	pdf_bytes = pdf_file.read()
 	images = convert_from_bytes(pdf_bytes)
-	pdf_writer = PyPDF2.PdfFileWriter()
+	# pdf_writer = PyPDF2.PdfFileWriter()
+	pdf_writer = pypdf.PdfWriter()
 
 	for image in images:
 		page = pytesseract.image_to_pdf_or_hocr(image, extension='pdf')
-		pdf = PyPDF2.PdfFileReader(io.BytesIO(page))
+		# pdf = PyPDF2.PdfFileReader(io.BytesIO(page))
+		pdf = pypdf.PdfReader(io.BytesIO(page))
 		pdf_writer.addPage(pdf.getPage(0))
 
 	searchable_pdf = io.BytesIO()
