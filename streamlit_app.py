@@ -21,7 +21,8 @@ def make_pdf_searchable(pdf_file):
 		pdf = pypdf.PdfReader(io.BytesIO(page))
 		# pdf_writer.addPage(pdf.getPage(0))
 		# pdf_writer.add_page(pdf.getPage(0))
-		pdf_writer.add_page(pdf.pages(0))
+		# pdf_writer.add_page(pdf.pages(0))
+		pdf_writer.add_page(pdf.pages[0])
 
 	searchable_pdf = io.BytesIO()
 	pdf_writer.write(searchable_pdf)
@@ -32,7 +33,7 @@ def make_pdf_searchable(pdf_file):
 # Streamlit app
 st.title("Make PDFs Searchable")
 
-uploaded_files = st.file_uploader("Choose PDF files", type="pdf", accept_multiple_files=True)
+uploaded_files = st.file_uploader("", type="pdf", accept_multiple_files=True)
 
 if uploaded_files:
 	searchable_pdfs = []
