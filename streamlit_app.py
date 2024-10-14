@@ -35,9 +35,8 @@ st.title("Make PDFs Searchable")
 # st.text("Upload your pdfs and download searchable versions after the processing is done. The processing will take a while though, so best to continue with your other work and come back to this page later to download the files.")
 st.markdown(
 	"<div style='text-align: justify; word-wrap: break-word;'>"
-	"Upload your pdfs and download searchable versions after the processing is done. "
-	"The processing will take a while though, so best to continue with your other work "
-	"and come back to this page later to download the files."
+	"Upload pdfs and get searchable versions you can use. "
+	"(Be warned that huge files might take a while.)"
 	"</div>",
 	unsafe_allow_html=True
 )
