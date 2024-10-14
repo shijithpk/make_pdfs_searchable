@@ -36,7 +36,7 @@ st.title("Make PDFs Searchable")
 st.markdown(
 	"<div style='text-align: justify; word-wrap: break-word;'>"
 	"Upload pdfs and get searchable versions you can use.<br>"
-	"(Be warned that huge files might take a while.)"
+	"(Be warned that huge files might take a while to process.)"
 	"</div>",
 	unsafe_allow_html=True
 )
